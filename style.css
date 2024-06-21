@@ -1,0 +1,366 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+html {
+    height: 228px; 
+    width: 1020px;
+    scroll-behavior: smooth;
+}
+#notes {
+    color: rgba(0, 0, 0, 0.425);
+    font-size: 10px;
+}
+.container {
+    max-width: 500px;
+    margin: 0cm 0cm 2cm 1cm;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.418); /* Set the background color to be transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+    margin-top: 0px;
+    transition: transform 0.3s ease-in-out;
+    float: left;
+}
+.forecast1 {
+    max-width: 600px;
+    width: 9cm;
+    margin: 0cm 0cm 1cm 709.08px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.418); /* Set the background color to be transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    float:left;
+}
+#datetime {
+    color: #ff4500;
+    /*border: orangered solid 0.1px;
+    border-radius: 10px;*/
+}
+.container:hover,.forecast1:hover {
+    transform: scale(1.05);
+}
+#weatherin {
+    border: 0.1px solid #000000;
+    border-radius: 10px;
+}
+.weather {
+    max-width: 450px;
+    margin: 0cm 0cm 1cm 2cm;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.418); /* Set the background color to be transparent */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    /*overflow: auto;*/
+}
+.weather:hover {
+    transform: scale(0.5);
+}
+.fc1, .nhabacmy {
+    text-align: center;
+}
+#bacmy {
+    cursor: pointer;
+}
+/* The Modal (background) */
+@-webkit-keyframes zoomin {
+    from {-webkit-zoom: 0%}
+    to {-webkit-zoom: 100%}
+}
+@keyframes zoomin {
+    from {zoom: 0%}
+    to {zoom: 100%}
+}
+@-webkit-keyframes zoomout {
+    from {-webkit-zoom: 100%}
+    to {-webkit-zoom: 0%}
+}
+@keyframes zoomout {
+    from {zoom: 100%}
+    to {zoom: 0%}
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: zoomin 0.6s;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    animation: zoomout 0.6s;
+  }
+
+/* Panels */
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  width: 426.22px;
+  transition: 0.3s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: '\2212';
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/*
+@media only screen and (max-width: 420px) {
+    body {
+        width: 130%;
+    }
+}
+
+@media all and (min-width: 320px) {
+    body {
+        width: 130%;
+        line-height: 1.5;
+    }
+}
+@media all and (min-width: 600px) {
+    body {
+        width: 150%;
+        line-height: 2;
+    }
+}
+@media all and (min-width: 1024px) {
+    body {
+        width: 200%;
+        line-height: 2.5;
+    }
+}
+
+.forecast {
+    max-width: 500px;
+    margin: 0cm 0cm 14cm 1cm;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.418);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+.forecast:hover {
+    transform: scale(1.05);
+}
+*/
+/*
+.container div {
+    width: 50%;
+    float: left;
+}*/
+/*.container-info {
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 105px;
+    transition: transform 0.3s ease-in-out;
+}
+.container-info:hover {
+    transform: scale(1.05);
+}*/
+
+h1 {
+    font-size: 24px;
+}
+.fc_label {
+    text-align: center;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+#snackbar {
+    visibility: hidden;
+    max-width: 300px;
+    margin-left: -150px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position:fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+input[type="text"], input[type="search"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    }
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+#diachi, #diachi1 {
+    -webkit-user-select:text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+input[type="text"], input[type="search"]:focus {
+    outline: none;
+    border-color: #2196F3;
+    width: 90%;
+}
+/*input[type="text"], input[type="search"]:hover {
+    transform: scale(1.05);
+}
+#apikey {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    user-select: none;
+}*/
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1;
+    position: relative;
+}
+button:hover {
+    /*background-color: #fff;
+    color: #000000;*/
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.container-info {
+    margin-top: 20px;
+}
