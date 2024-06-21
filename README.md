@@ -6,4 +6,4 @@ You can just type the city or a district name to convert them to weather and wea
 
 - This weather/weather forecast info maybe not correct to the weather right now.
 - If you got a correct city name, but it says: "Cannot find the city name: `"${Your city}"`
-to show the weather and weather forecast data." then check your internet was connected.
+to show the weather and weather forecast data." then check your internet was connected to your device.
