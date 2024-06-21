@@ -1,1 +1,74 @@
+<!--
+This file/page ((index.html), style.css and weather.js) has been written by Minh Nhân;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>-->
+    <title>Weather and weather forecast</title>
+    <link rel="shortcut icon" href="https://openweathermap.org/img/w/01d.png" type="image/x-icon">
+    <!--<link rel="icon" href="https://openweathermap.org/img/w/01n.png" type="image/x-icon">-->
+    <!--<link rel="icon" type="image/x-icon" href="">-->
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- end of Header -->
+</head>
+<body>
+    <div id="snackbar">
+        
+    </div>
+    <div id="weather" colspan="100">
+        <nav></nav>
+        <section id="weather-data">
+            <div class="container" id="container">
+                <h1>Find the weather: </h1>
+                <input type="search" id="locationInput" placeholder="Type a city or district">
+                <button id="searchButton">&#x1F50E;&#xFE0E; Find</button>
+                <button id="location_button"><!--<i class='fas fa-map-marker-alt'></i>-->
+                    Your location
+                </button>
+                <div class="weather-info" id="weatherin">
+                    <h2 id="location"></h2>
+                    <p id="time"></p>
+                    <p id="datetime"></p>
+                    <h5 id="description"></h5>
+                    <div id="icon"><img id="wicon" src="" alt="Ảnh thời tiết"></div>
+                    <h4 id="temperature"></h4>
+
+                    <!--<div id="humidity_icon"><img id="humidity_ico" src=""></div>-->
+                    <p id="cloud"></p>
+                    <p id="rain"></p>
+                    <p id="minmaxtemp"></p>
+                    <p id="pressure"></p>
+                    <p id="visibility"></p>
+                    <p id="windspeed"></p>
+                    <p id="humidity"></p>
+                    <p id="snow"></p><p id="sunrise"></p><p id="sunset"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section id="forecast">
+        <!-- To give a section id named "forecast" -->
+        <div class="forecast" id="forecast">
+            <div class="fc1">
+                <h1>Weather forecast: </h1>
+                <p id="thanhpho"></p>
+                <h4 id="time7"></h4>
+                <h5 id="des1"></h5><div id="icon1"><img id="forecasticon" src="" alt="Weather forecast picture"></div>
+                <h4 id="tempfc1"></h4>
+                <p id="cloudy"></p>
+                <p id="rainy"></p>
+                <p id="notes">* Weather/weather forecast info maybe not correct.</p>
+            </div>
+        </div>
+    </section>
+</body>
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<script type="text/javascript" src="weather.js"></script>
+    <!-- English version -->
+</html>
