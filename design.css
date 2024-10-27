@@ -1,0 +1,174 @@
+/*
+  * This design made by Minh Nhân
+  * Copyright : Minh Nhân (2024)
+*/
+
+button, span, input[type="button"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1;
+    position: relative;
+}
+/* Keyframes cho hiệu ứng chuyển động */
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+.container, .air, .map {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out, move 2s ease-in-out infinite alternate;
+}
+button:hover, span:hover, input[type="button"]:hover {
+    /*background-color: #fff;
+    color: #000000;*/
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+code {
+    border: 0.25px solid rgba(97, 96, 96, 0.856);
+    background-color: rgba(196, 194, 194, 0.904);
+    font-family: monospace;
+    font-size: 15px;
+    border-radius: 5%;
+}
+#ask {
+    background-color: #85878a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1;
+    position: relative;
+}
+#top_button {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 81.2px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: black; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 100%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #top_button:hover {
+    background-color: #5c5a5a; /* Add a dark-grey background on hover */
+  }
+#newBody {
+  float:left;
+  position:relative;
+  /*margin-top: 7.841cm;*/
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  /*padding: 10px;*/
+  padding: 20px;
+}
+#rainVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height:auto;
+}
+#location2 {
+    border: 0.25px solid #85878a;
+    border-radius: 10px;
+}
+#navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+
+}
+body {margin:0;align-items:center;justify-content: center;display:flex;}
+#newBody {text-align:center;align-items: center;}
+#find {
+  transition: width 0.6s ease-in-out;
+}
+
+#find:focus {
+    transform: translateX(200);
+    width: 400px;
+}
+.input-group {
+  align-items: center;
+  border-radius: 25px;
+  position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  padding: .375rem .75rem;
+  margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.input-group span {
+  padding: 10px;
+  font-size: 16px;
+  padding: .375rem .75rem;
+}
+.searchdata {
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+.background {
+  /* The image used */
+
+  /* Full height */
+  height: 100%; 
+  width:100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:fixed;
+}
+
+/*any link*/
+a:any-link {
+    color:#ad3a3aaa;
+}
