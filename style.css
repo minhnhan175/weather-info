@@ -5,17 +5,22 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width:100%;
 }
 html {
     height: 228px; 
-    width: 1020px;
+    width: 1280px;
     scroll-behavior: smooth;
 }
 #notes {
     color: rgba(0, 0, 0, 0.425);
     font-size: 10px;
 }
-.container {
+#time {
+    text-align: center;
+}
+#newBody {width:100%;height:100%;}
+.container, .health, .air, .map, .searchdata {
     max-width: 500px;
     margin: 0cm 0cm 2cm 1cm;
     text-align: center;
@@ -36,19 +41,35 @@ html {
     background-color: rgba(255, 255, 255, 0.418); /* Set the background color to be transparent */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
-    margin-top: 20px;
+    margin-top: 0px;
     transition: transform 0.3s ease-in-out;
     float:left;
 }
-#datetime {
+#refresh {
+    background-color: black;
+    border-radius: 100%;
+    display: block;
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 100%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+#datetime, #update-time {
     color: #ff4500;
     /*border: orangered solid 0.1px;
     border-radius: 10px;*/
 }
-.container:hover,.forecast1:hover {
+.container:hover,.forecast1:hover, .health:hover, .air:hover, .map:hover,.searchdata:hover {
     transform: scale(1.05);
 }
-#weatherin {
+#weatherin, #aqi_bcolor {
     border: 0.1px solid #000000;
     border-radius: 10px;
 }
@@ -60,76 +81,24 @@ html {
     background-color: rgba(255, 255, 255, 0.418); /* Set the background color to be transparent */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
-    margin-top: 20px;
+    margin-top: 0px;
     transition: transform 0.3s ease-in-out;
     /*overflow: auto;*/
 }
 .weather:hover {
     transform: scale(0.5);
 }
-.fc1, .nhabacmy {
-    text-align: center;
+.health {
+    margin-left: -2cm;
+    display: block;
 }
-#bacmy {
-    cursor: pointer;
+.air {
+    margin-left: 3cm;
 }
-/* The Modal (background) */
-@-webkit-keyframes zoomin {
-    from {-webkit-zoom: 0%}
-    to {-webkit-zoom: 100%}
+.map {
+    margin-top: -8cm;
+    margin-left: auto;
 }
-@keyframes zoomin {
-    from {zoom: 0%}
-    to {zoom: 100%}
-}
-@-webkit-keyframes zoomout {
-    from {-webkit-zoom: 100%}
-    to {-webkit-zoom: 0%}
-}
-@keyframes zoomout {
-    from {zoom: 100%}
-    to {zoom: 0%}
-}
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    animation: zoomin 0.6s;
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-    animation: zoomout 0.6s;
-  }
-
 /* Panels */
 
 .accordion {
@@ -294,7 +263,14 @@ h1 {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
-input[type="text"], input[type="search"] {
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    width: 130px;
+    border-radius: 5px;
+}
+input[type="search"] {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
@@ -312,7 +288,7 @@ input[type="text"], input[type="search"] {
     text-decoration: none;
     margin: 5px 2px;
     border-radius: 50%;
-    }
+}
 .fa:hover {
     opacity: 0.7;
 }
@@ -326,10 +302,10 @@ input[type="text"], input[type="search"] {
     -ms-user-select: text;
     user-select: text;
 }
-input[type="text"], input[type="search"]:focus {
+input[type="text"]:focus {outline: none; border-color: #2196F3;}
+input[type="search"]:focus {
     outline: none;
     border-color: #2196F3;
-    width: 90%;
 }
 /*input[type="text"], input[type="search"]:hover {
     transform: scale(1.05);
@@ -342,25 +318,19 @@ input[type="text"], input[type="search"]:focus {
     border-radius: 5px;
     user-select: none;
 }*/
+#sunrise, #pressure, #minmaxtemp, #sealevel, #winddir {font-size: 13px;}
 
-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 1;
-    position: relative;
+.container-info {margin-top: 0px;}
+#rss-image {
+    zoom: 0.1;
 }
-button:hover {
-    /*background-color: #fff;
-    color: #000000;*/
-    padding: 10px 20px;
-    cursor: pointer;
-    opacity: 0.6;
+#mymodal {
+    text-align: center;
 }
-.container-info {
-    margin-top: 20px;
+#health {
+    margin-top: -8cm;
+    margin-left: 2.5cm;
+}
+.hr_today {
+    border: 0.75px dashed grey;
 }
